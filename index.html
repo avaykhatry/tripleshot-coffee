@@ -8,8 +8,8 @@
   </head>
   <body>
     <header>
-        <nav>
-          <div class="logo">TRIPLE SHOT COFFEE</div>
+      <nav>
+        <div class="logo">TRIPLE SHOT COFFEE</div>
         <a href="/">Home</a>
         <a href="/">Shop</a>
         <a href="/">About Us</a>
@@ -23,55 +23,92 @@
       </nav>
       <div class="dark-box"></div>
       <div class="hero">
+        <img
+          src="https://cdn.prod.website-files.com/6806c5d2b6a7e99b9f1d35fb/6806c5d2b6a7e99b9f1d377c_group_snap.svg"
+          alt=""
+        />
         <h1>TASTE THE JOY OF THE EXTRAORDINARY</h1>
         <button>SHOP NOW</button>
       </div>
     </header>
     <div class="main">
-      <h2>OUR MOST POPULAR ITEMS</h2>
-      <p>
-        Choose from our selection of the most popular products available online
-      </p>
-      <div class="list">
-        <div class="item1">
-          <img src="https://www.picsum.photos/400/300" alt="" />
-          <span>Resurrection Bean</span>
-          <span>From $26.99</span>
+      <!-- <section class="products">
+        <h2>OUR MOST POPULAR ITEMS</h2>
+        <p>
+          Choose from our selection of the most popular products available
+          online
+        </p>
+        <div class="product-list">
+          <div class="product-card">
+            <img src="https://www.picsum.photos/400/300" alt="" />
+            <h3>Resurrection Bean</h3>
+            <p>From $26.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.picsum.photos/400/300" alt="" />
+            <h3>Deep, Dark & Twisted</h3>
+            <p>From $26.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.picsum.photos/400/300" alt="" />
+            <h3>Single Origin India</h3>
+            <p>From $26.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.picsum.photos/400/300" alt="" />
+            <h3>Black Honey</h3>
+            <p>From $26.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.picsum.photos/400/300" alt="" />
+            <h3>Roasted Bean</h3>
+            <p>From $26.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="https://www.picsum.photos/400/300" alt="" />
+            <h3>Special Triple Shot</h3>
+            <p>From $26.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
         </div>
-        <div class="item2">
-          <img src="https://www.picsum.photos/400/300" alt="" />
-          <span>Deep, Dark & Twisted</span>
-          <span>From $26.99</span>
+
+        <div class="cart-info">
+          🛒 Cart Items: <span id="cart-count">0</span>
         </div>
-        <div class="item3">
-          <img src="https://www.picsum.photos/400/300" alt="" />
-          <span>Single Origin India</span>
-          <span>From $26.99</span>
-        </div>
-        <div class="item4">
-          <img src="https://www.picsum.photos/400/300" alt="" />
-          <span>Black Honey</span>
-          <span>From $26.99</span>
-        </div>
-        <div class="item5">
-          <img src="https://www.picsum.photos/400/300" alt="" />
-          <span>Roasted Bean</span>
-          <span>From $26.99</span>
-        </div>
-        <div class="item6">
-          <img src="https://www.picsum.photos/400/300" alt="" />
-          <span>Special Triple Shot</span>
-          <span>From $26.99</span>
-        </div>
-      </div>
-      <p>
-        Browse our full store for more extraordinary and luxurious coffee
-        inspired poducts.
-      </p>
-      <button>BROWSE STORE</button>
+
+        <p>
+          Browse our full store for more extraordinary and luxurious coffee
+          inspired poducts.
+        </p>
+        <button>BROWSE STORE</button>
+      </section> -->
+
+      <section class="products">
+  <h2>Our Featured Coffees</h2>
+  <div class="product-list" id="product-list">
+    <!-- Products will be injected here by JavaScript -->
+  </div>
+
+  <div class="cart-info">
+    🛒 Cart Items: <span id="cart-count">0</span>
+  </div>
+</section>
+
+<script src="products.js"></script>
+
+
       <div class="barista">
-        <span>barista training</span>
-        <button>BECOME A BARISTA</button>
+        <img src="https://academy.truth.coffee/wp-content/uploads/2022/05/@CraveConcepts_TruthRoasting-1566-scaled.jpg" width="100%" alt="">
+        <div>
+          <h2>THE TRIPLE SHOT COFFEE ACADEMY</h2>
+          <p>Share the Joy of the Extraordinary</p>
+          <button>BECOME A BARISTA</button>
+        </div>
       </div>
 
       <div class="reviews">
@@ -110,15 +147,42 @@
       <div class="gallery">
         <h1>GALLERY</h1>
         <div class="gallery-items">
-<img src="http://static3.minitokyo.net/thumbs/00/33/434150.jpg" alt="image">
-        <img src="http://static3.minitokyo.net/thumbs/19/27/386369.jpg" alt="image">
-        <img src="http://static3.minitokyo.net/thumbs/07/31/579057.jpg" alt="image">
-        <img src="http://static3.minitokyo.net/thumbs/49/32/434149.jpg" alt="image">
-        <img src="https://images.unsplash.com/photo-1560972550-aba3456b5564?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YW5pbWV8ZW58MHx8MHx8fDA%3D" alt="image">
-        <img src="https://images.unsplash.com/photo-1744168222804-2bed62b24f86?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8" alt="image">
-        <img src="https://images.unsplash.com/photo-1750268746263-52cdef61e177?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8" alt="image">
-        <img src="https://images.unsplash.com/photo-1519638399535-1b036603ac77?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5pbWV8ZW58MHx8MHx8fDA%3D" alt="image">
-        <img src=" https://plus.unsplash.com/premium_photo-1682124729413-6d940f082212?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFuaW1lfGVufDB8fDB8fHww" alt="image">
+          <img
+            src="http://static3.minitokyo.net/thumbs/00/33/434150.jpg"
+            alt="image"
+          />
+          <img
+            src="http://static3.minitokyo.net/thumbs/19/27/386369.jpg"
+            alt="image"
+          />
+          <img
+            src="http://static3.minitokyo.net/thumbs/07/31/579057.jpg"
+            alt="image"
+          />
+          <img
+            src="http://static3.minitokyo.net/thumbs/49/32/434149.jpg"
+            alt="image"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1560972550-aba3456b5564?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YW5pbWV8ZW58MHx8MHx8fDA%3D"
+            alt="image"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1744168222804-2bed62b24f86?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8"
+            alt="image"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1750268746263-52cdef61e177?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
+            alt="image"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1519638399535-1b036603ac77?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5pbWV8ZW58MHx8MHx8fDA%3D"
+            alt="image"
+          />
+          <img
+            src=" https://plus.unsplash.com/premium_photo-1682124729413-6d940f082212?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFuaW1lfGVufDB8fDB8fHww"
+            alt="image"
+          />
         </div>
       </div>
     </div>
@@ -170,5 +234,7 @@
         <p>© 2025 Triple. All rights reserved.</p>
       </div>
     </footer>
+
+    <script src="/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Resurrection Bean",
+    "price": 26.99,
+    "image": "https://www.picsum.photos/400/300"
+  },
+  {
+    "name": "Deep, Dark & Twisted",
+    "price": 26.99,
+    "image": "https://www.picsum.photos/400/300"
+  },
+  {
+    "name": "Single Origin India",
+    "price": 26.99,
+    "image": "https://www.picsum.photos/400/300"
+  },
+  {
+    "name": "Black Honey",
+    "price": 26.99,
+    "image": "https://www.picsum.photos/400/300"
+  },
+  {
+    "name": "Roasted Bean",
+    "price": 26.99,
+    "image": "https://www.picsum.photos/400/300"
+  },
+  {
+    "name": "Special Triple Shot",
+    "price": 26.99,
+    "image": "https://www.picsum.photos/400/300"
+  }
+]

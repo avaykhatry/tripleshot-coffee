@@ -8,19 +8,52 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav id="main-nav" class="main-nav">
         <div class="logo">TRIPLE SHOT COFFEE</div>
-        <a href="/">Home</a>
-        <a href="/">Shop</a>
-        <a href="/">About Us</a>
-        <a href="/">Barista Academy</a>
-        <a href="#" aria-label="Shopping Cart"
-          ><img
-            src="assets/shopping-cart-01-svgrepo-com.svg"
-            width="28px"
-            alt="Shopping Cart"
-        /></a>
+        <a class="hideOnMobile" href="/">Home</a>
+        <a class="hideOnMobile" href="#products">Shop</a>
+        <a class="hideOnMobile" href="#about">About Us</a>
+        <a class="hideOnMobile" href="#barista">Barista Academy</a>
+        <div>
+          <img id="cart" class="cart"
+              src="assets/shopping-cart-01-svgrepo-com.svg"
+              width="28px"
+              alt="Shopping Cart"
+          />
+        </div>
+        <!-- <img onclick="showSideNav()" class="ham-menu" src="/assets/hamburger-menu-svgrepo-com.svg" width="23px" alt="">
+          <img onclick="hideSideNav()" class="ham-menu-close" src="/assets/cross-svgrepo-com.svg" width="23px" alt=""> -->
+        <div class="ham-menu" id="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </nav>
+
+      <div class="cart-box" id="cart-box">
+        <div class="cart-inner">
+          <h1>SHOPPING CART</h1>
+
+            <img src="/assets/cross-svgrepo-com.svg" id="close-cart"  width="32px" alt="">
+
+        </div>
+        <div class="separator"></div>
+        <div id="cart-box-items">
+          Your cart is currently empty.
+        </div>
+      </div>
+
+      <!-- side nav ham-menu -->
+      <div class="side-nav" id="side-nav">
+
+        <!-- navigation links -->
+
+           <a href="/">Home</a>
+           <a href="#products">Shop</a>
+           <a href="#about">About Us</a>
+           <a href="#barista">Barista Academy</a>
+        </div>
+
       <div class="dark-box"></div>
       <div class="hero">
         <img
@@ -31,6 +64,13 @@
         <button>SHOP NOW</button>
       </div>
     </header>
+
+    <!-- Scroll To Top Button -->
+
+    <button onclick="scrollToTopFunc()" title="Go to Top" id="myBtn">
+      <img src="/assets/top-arrow-5-svgrepo-com.svg" alt="">
+    </button>
+
     <div class="main">
       <!-- <section class="products">
         <h2>OUR MOST POPULAR ITEMS</h2>
@@ -88,30 +128,38 @@
         <button>BROWSE STORE</button>
       </section> -->
 
-      <section class="products">
-  <h2>Our Featured Coffees</h2>
-  <div class="product-list" id="product-list">
-    <!-- Products will be injected here by JavaScript -->
-  </div>
-
-  <div class="cart-info">
-    🛒 Cart Items: <span id="cart-count">0</span>
-  </div>
-</section>
-
-<script src="products.js"></script>
-
-
-      <div class="barista">
-        <img src="https://academy.truth.coffee/wp-content/uploads/2022/05/@CraveConcepts_TruthRoasting-1566-scaled.jpg" width="100%" alt="">
-        <div>
-          <h2>THE TRIPLE SHOT COFFEE ACADEMY</h2>
-          <p>Share the Joy of the Extraordinary</p>
-          <button>BECOME A BARISTA</button>
+      <section class="products" id="products">
+        <h2>Our Featured Coffees</h2>
+        <div class="product-list" id="product-list">
+          <!-- Products will be injected here by JavaScript -->
         </div>
-      </div>
 
-      <div class="reviews">
+        <div class="cart-info">
+          🛒 Cart Items: <span id="cart-count">0</span>
+        </div>
+      </section>
+
+      <script src="products.js"></script>
+
+      <section class="barista" id="barista">
+        <div class="barista-inner">
+          <div class="barista-image">
+            <img
+              src="https://academy.truth.coffee/wp-content/uploads/2022/05/@CraveConcepts_TruthRoasting-1566-scaled.jpg"
+              alt=""
+            />
+          </div>
+          <div class="barista-text">
+            <h2>THE TRIPLE SHOT COFFEE ACADEMY</h2>
+            <p>Share the Joy of the Extraordinary</p>
+            <button>BECOME A BARISTA</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- reviews start -->
+
+      <!-- <div class="reviews">
         <h2>CUSTOMER REVIEWS</h2>
         <div class="review1">
           <span>⭐️⭐️⭐️⭐️⭐️</span>
@@ -131,9 +179,12 @@
             error molestiae fugiat eveniet?
           </p>
         </div>
-      </div>
+      </div> -->
 
-      <div class="about">
+      <!-- reviews end -->
+
+      <!-- about start -->
+      <!-- <div class="about">
         <h2>ABOUT US</h2>
         <img src="https://www.picsum.photos/400/300" alt="" />
         <p>
@@ -142,7 +193,49 @@
           hic eum tempore mollitia optio recusandae deleniti dolore totam
           dolores. Corporis, vero?
         </p>
-      </div>
+      </div> -->
+      <!-- about end -->
+
+      <!-- ABOUT SECTION -->
+      <section class="about" id="about">
+        <div class="about-inner">
+          <div class="about-text">
+            <h2>About Triple Shot Coffee</h2>
+            <p>
+              Triple Shot Coffee is more than just a café — it's an experience.
+              Every bean is ethically sourced and roasted in-house for the
+              perfect balance of aroma and flavor. We craft each cup with care
+              so you can taste the joy of the extraordinary.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="https://www.picsum.photos/500/400" alt="Coffee beans" />
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS SECTION -->
+      <section class="reviews" id="reviews">
+        <h2>Our Happy Customers</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <p>
+              “Best coffee I’ve ever tasted — rich, smooth, and unforgettable!”
+            </p>
+            <span>- Sarah L.</span>
+          </div>
+          <div class="review-card">
+            <p>“The atmosphere is warm and welcoming, I feel at home here.”</p>
+            <span>- James K.</span>
+          </div>
+          <div class="review-card">
+            <p>
+              “I’m addicted to their Triple Shot blend. Pure magic in a cup.”
+            </p>
+            <span>- Priya S.</span>
+          </div>
+        </div>
+      </section>
 
       <div class="gallery">
         <h1>GALLERY</h1>

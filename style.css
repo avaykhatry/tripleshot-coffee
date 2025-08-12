@@ -7,7 +7,15 @@
   --accent: #f1b33a;
   --black: #1e1e1e;
   --white: #e9e9e9;
-  --gradient: linear-gradient(to right, rgba(55, 56, 60, 0.5), rgba(255, 255, 255, 0.9));
+  --gradient: linear-gradient(
+    to right,
+    rgba(55, 56, 60, 0.5),
+    rgba(255, 255, 255, 0.9)
+  );
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -44,24 +52,173 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   padding: 1rem 2rem;
-  background: linear-gradient(to right, rgba(55, 56, 60, 0.5), rgba(255, 255, 255, 0.9)) ; /* semi-transparent for readability */
+  background: linear-gradient(
+    to right,
+    rgba(55, 56, 60),
+    rgba(255, 255, 255)
+  ); /* semi-transparent for readability */
   position: sticky;
   top: 0;
-  z-index: 10;
+  left: 0;
+  right: 0;
+  z-index: 15;
+}
+
+.main-nav.active {
+  position: fixed;
 }
 
 nav .logo {
   margin-right: auto;
   font-weight: bold;
-  color: var(--white)
+  color: var(--white);
 }
 
 nav a {
   text-decoration: none;
   color: var(--black);
 }
+
+/* side-nav start */
+
+/* .ham-menu {
+  display: none;
+}
+
+.ham-menu-close {
+  display: none;
+} */
+
+.ham-menu {
+  width: 30px;
+  height: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.ham-menu span {
+  display: block;
+  height: 3px;
+  width: 30px;
+  background: #3e2f23;
+  border-radius: 9px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center center;
+}
+
+/* Morph to X when active */
+.ham-menu.active span:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+.side-nav {
+  background: linear-gradient(
+    to right,
+    rgba(55, 56, 60),
+    rgba(255, 255, 255)
+  ); /* semi-transparent for readability */
+  position: fixed;
+  padding: 50px 0;
+  z-index: 10;
+  width: 100%;
+  height: 50%;
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.side-nav a {
+  width: 85%;
+  text-align: center;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.4);
+  font-size: 1.4rem;
+  line-height: 3.56;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--primary);
+}
+
+.side-nav a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.ham-menu.active {
+  gap: 0;
+}
+
+.side-nav.active {
+  display: flex;
+
+}
+/* side nav end */
+
+/* cart start */
+
+.cart-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: var(--white);
+  z-index: 20;
+  height: 100%;
+  
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.cart-inner {
+  margin: auto;
+  max-width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-inner img{
+  cursor: pointer;
+}
+
+.cart-box .separator {
+  height: 1px;
+  background: var(--gradient)
+}
+
+#cart-box-items {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cart-box.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+/* cart end */
 
 /* --- HERO --- */
 .hero {
@@ -76,12 +233,12 @@ nav a {
 
 .hero img {
   position: relative;
-     top: 144px;
-    left: -350px;
+  top: 144px;
+  left: -350px;
 }
 
 .hero h1 {
-    color: var(--white);
+  color: var(--white);
   font-size: 60px;
   margin-bottom: 1rem;
 }
@@ -100,6 +257,24 @@ nav a {
 }
 
 /* header end */
+
+/* scroll top behavior */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background: var(--gradient);
+}
+
+#myBtn img {
+  width: 49px;
+}
 
 /* product listing start */
 .products {
@@ -123,13 +298,13 @@ nav a {
   background: white;
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -170,43 +345,166 @@ nav a {
   font-weight: bold;
 }
 
-
 /* product listing end */
 
 /* barista start */
 
 .barista {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(135deg, #f9f6f1, #f0e5d8);
 }
 
-.barista > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.barista-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  max-width: 1100px;
+  margin: auto;
   align-items: center;
+}
+
+.barista-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+
+.barista-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3e2f23;
+}
+
+.barista-text p {
+  line-height: 1.7;
+  color: #5b4b3b;
+  font-size: 1.1rem;
 }
 
 /* barista end */
 
 /* reviews start */
 
-.reviews {
+/* .reviews {
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
+} */
 
 /* reviews end */
 
 /* about start */
 
-.about {
+/* .about {
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
+} */
 
 /* about end */
+
+/* General Section Styles */
+section {
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+/* ABOUT */
+.about {
+  background: linear-gradient(135deg, #f9f6f1, #f0e5d8);
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  max-width: 1100px;
+  margin: auto;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3e2f23;
+}
+
+.about-text p {
+  line-height: 1.7;
+  color: #5b4b3b;
+  font-size: 1.1rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1);
+}
+
+/* REVIEWS */
+.reviews {
+  background: #fff;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #3e2f23;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.review-card {
+  background: #fdfbf8;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.review-card p {
+  font-style: italic;
+  color: #4b3d30;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.review-card span {
+  font-weight: bold;
+  color: #a67b5b;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* gallery start*/
 
@@ -216,13 +514,13 @@ nav a {
 }
 
 .gallery-items img {
-    width: 100%;
-    margin-bottom: 1em;
-    display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  display: block;
 }
 
 .gallery-items {
-    columns: 300px;
+  columns: 300px;
 }
 
 /* gallery end */
@@ -230,7 +528,7 @@ nav a {
 /* footer start */
 
 .footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   background: var(--gradient);
   color: var(--black);
   padding: 2rem 1rem 1rem;
@@ -299,4 +597,16 @@ nav a {
   margin-top: 1rem;
   padding-top: 0.5rem;
   font-size: 0.9rem;
+}
+
+/* mobile responsive */
+
+@media screen and (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .ham-menu {
+    display: flex;
+  }
 }

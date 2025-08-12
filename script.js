@@ -43,3 +43,76 @@ fetch("products.json")
     });
   })
   .catch(error => console.error("Error loading products:", error));
+
+// Fade-in elements on scroll
+const fadeElements = document.querySelectorAll('.about-inner, .review-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+fadeElements.forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
+
+
+const hamMenu = document.getElementById('ham-menu');
+const sideNav = document.getElementById('side-nav');
+const mainNav = document.getElementById('main-nav');
+
+hamMenu.addEventListener('click', () => {
+  hamMenu.classList.toggle('active');
+  sideNav.classList.toggle('active');
+  mainNav.classList.toggle('active');
+
+  
+});
+
+const cartBox = document.getElementById('cart-box');
+
+// cartBox.addEventListener('click', function() {
+//   // cartBox.classList.toggle('active');
+// });
+
+const cartImage = document.getElementById('cart');
+const closeCartBtn = document.getElementById('close-cart');
+
+cartImage.addEventListener('click', () => {
+  cartBox.classList.toggle('active');
+  document.body.classList.toggle('no-scroll');
+});
+
+closeCartBtn.addEventListener('click', () => {
+  cartBox.classList.remove('active');
+  document.body.classList.remove('no-scroll');
+});
+
+// get the scroll btn
+let myButton = document.getElementById('myBtn');
+
+// When the user scrolls down 20px from the top of the document, show the button
+
+window.onscroll = function() {
+  scrollFunction()
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
+    myButton.style.display = "block";
+  } else {
+    myButton.style.display = "none";
+  }
+}
+
+
+// When the user clicks on the button, scroll to the top of the document
+
+function scrollToTopFunc() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

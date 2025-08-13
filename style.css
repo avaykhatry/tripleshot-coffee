@@ -218,6 +218,23 @@ nav a {
 body.no-scroll {
   overflow: hidden;
 }
+
+/* cart inside */
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remove-item {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
 /* cart end */
 
 /* --- HERO --- */

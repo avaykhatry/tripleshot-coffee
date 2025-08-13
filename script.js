@@ -33,8 +33,8 @@ fetch("products.json")
       button.classList.add("add-to-cart");
       button.textContent = "Add to Cart";
       button.addEventListener("click", () => {
-        cartCount++;
-        cartCountEl.textContent = cartCount;
+cart.push({ name: product.name, price: product.price });
+        renderCart();
       });
       card.appendChild(button);
 
@@ -116,3 +116,41 @@ function scrollToTopFunc() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// Start: adding item to the cart
+
+let cart = []; // instead of cartCount
+const cartBoxItems = document.getElementById('cart-box-items');
+
+  // Function to render cart contents
+function renderCart() {
+  if (cart.length === 0) {
+    cartBoxItems.innerHTML = "Your cart is currently empty.";
+    return;
+  }
+
+  cartBoxItems.innerHTML = cart.map((item, index) => `
+    <div class="cart-item">
+      <button class="remove-item" data-index="${index}">—</button>
+      ${item.name} - $${item.price.toFixed(2)}
+    </div>
+  `).join("");
+
+  // Add total at the bottom
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  cartBoxItems.innerHTML += `
+    <div class="separator"></div>
+    <div class="cart-total"><strong>Total:</strong> $${total.toFixed(2)}</div>
+  `;
+}
+
+// Remove item when clicking the dash
+cartBoxItems.addEventListener("click", (e) => {
+  if (e.target.classList.contains("remove-item")) {
+    const index = parseInt(e.target.dataset.index);
+    cart.splice(index, 1);
+    renderCart();
+  }
+});
+
+// End: adding item to the cart

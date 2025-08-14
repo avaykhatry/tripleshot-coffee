@@ -2,31 +2,31 @@
   {
     "name": "Resurrection Bean",
     "price": 26.99,
-    "image": "https://www.picsum.photos/400/300"
+    "image": "assets/coffee-beans/hal-gatewood-ylrLIn8DpyQ-unsplash.jpg"
   },
   {
     "name": "Deep, Dark & Twisted",
     "price": 26.99,
-    "image": "https://www.picsum.photos/400/300"
+    "image": "assets/coffee-beans/nadia-valko-7QlJ79Cj43w-unsplash.jpg"
   },
   {
     "name": "Single Origin India",
     "price": 26.99,
-    "image": "https://www.picsum.photos/400/300"
+    "image": "assets/coffee-beans/nathan-dumlao-PX1IrPsimHE-unsplash.jpg"
   },
   {
     "name": "Black Honey",
     "price": 26.99,
-    "image": "https://www.picsum.photos/400/300"
+    "image": "assets/coffee-beans/nathan-dumlao-VylPA_mm7AE-unsplash.jpg"
   },
   {
     "name": "Roasted Bean",
     "price": 26.99,
-    "image": "https://www.picsum.photos/400/300"
+    "image": "assets/coffee-beans/redd-francisco-fks4pr96YDk-unsplash.jpg"
   },
   {
     "name": "Special Triple Shot",
     "price": 26.99,
-    "image": "https://www.picsum.photos/400/300"
+    "image": "assets/coffee-beans/wojciech-paczes-OgJYC8q7QSE-unsplash.jpg"
   }
 ]

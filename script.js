@@ -45,7 +45,7 @@ cart.push({ name: product.name, price: product.price });
   .catch(error => console.error("Error loading products:", error));
 
 // Fade-in elements on scroll
-const fadeElements = document.querySelectorAll('.about-inner, .review-card');
+const fadeElements = document.querySelectorAll('.about-inner, .review-card, .barista-inner');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

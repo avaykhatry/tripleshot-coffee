@@ -202,10 +202,12 @@ nav a {
 }
 
 #cart-box-items {
-  height: 20vh;
+  margin-top: 3rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 
@@ -286,7 +288,7 @@ body.no-scroll {
   outline: none;
   cursor: pointer;
   border-radius: 10px;
-  background: var(--gradient);
+  background: var(--accent)
 }
 
 #myBtn img {
@@ -296,7 +298,7 @@ body.no-scroll {
 /* product listing start */
 .products {
   padding: 2rem;
-  background: #faf7f2;
+  /* background: #faf7f2; */
   text-align: center;
 }
 
@@ -367,7 +369,7 @@ body.no-scroll {
 /* barista start */
 
 .barista {
-  background: linear-gradient(135deg, #f9f6f1, #f0e5d8);
+  /* background: linear-gradient(135deg, #f9f6f1, #f0e5d8); */
 }
 
 .barista-inner {
@@ -381,10 +383,16 @@ body.no-scroll {
 
 .barista-image img {
   width: 100%;
+    height: 306px;
+object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   transform: scale(0.95);
   transition: transform 0.4s ease;
+}
+
+.barista-image img:hover {
+  transform: scale(1);
 }
 
 .barista-text h2 {
@@ -399,25 +407,16 @@ body.no-scroll {
   font-size: 1.1rem;
 }
 
+.barista button {
+    background: #5c3d2e;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
 /* barista end */
-
-/* reviews start */
-
-/* .reviews {
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-} */
-
-/* reviews end */
-
-/* about start */
-
-/* .about {
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-} */
-
-/* about end */
 
 /* General Section Styles */
 section {
@@ -426,9 +425,9 @@ section {
 }
 
 /* ABOUT */
-.about {
+/* .about {
   background: linear-gradient(135deg, #f9f6f1, #f0e5d8);
-}
+} */
 
 .about-inner {
   display: grid;
@@ -453,6 +452,8 @@ section {
 
 .about-image img {
   width: 100%;
+  height: 306px;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   transform: scale(0.95);
@@ -465,7 +466,7 @@ section {
 
 /* REVIEWS */
 .reviews {
-  background: #fff;
+  /* background: #fff; */
   text-align: center;
 }
 
@@ -525,19 +526,29 @@ section {
 
 /* gallery start*/
 
-.gallery h1 {
+.gallery h2 {
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #3e2f23;
 }
 
 .gallery-items img {
   width: 100%;
   margin-bottom: 1em;
   display: block;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
 }
 
 .gallery-items {
   columns: 300px;
+}
+
+.gallery-items img:hover {
+  transform: scale(1);
 }
 
 /* gallery end */
@@ -545,7 +556,7 @@ section {
 /* footer start */
 
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  /* border-top: 1px solid rgba(255, 255, 255); */
   background: var(--gradient);
   color: var(--black);
   padding: 2rem 1rem 1rem;
@@ -618,12 +629,32 @@ section {
 
 /* mobile responsive */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1396px) {
+  .hero img {
+    left: -210px;
+}
+}
+
+@media screen and (max-width: 784px) {
   .hideOnMobile {
     display: none;
   }
 
   .ham-menu {
     display: flex;
+  }
+
+  .hero img {
+    left: -165px;
+  }
+}
+
+@media screen and (max-width: 627px) {
+  .hero img {
+    left: -140px;
+  }
+
+  .barista, .about {
+    text-align: center;
   }
 }

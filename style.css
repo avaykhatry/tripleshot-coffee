@@ -81,6 +81,15 @@ nav a {
   color: var(--black);
 }
 
+nav a:hover {
+  background: var(--tertiary);
+  padding: 0px 4px;
+}
+
+.main-nav img:hover {
+  padding: 0px 4px;
+  background: var(--tertiary);
+}
 /* side-nav start */
 
 /* .ham-menu {
@@ -269,10 +278,17 @@ body.no-scroll {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
+
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero button:hover {
-  background: var(--tertiary);
+  background: #ff7f50;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
 }
 
 /* header end */
